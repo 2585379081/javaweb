@@ -1,0 +1,96 @@
+
+
+/******************************顶部开始**********************/
+.top{
+    width: 1100px;
+    height: 150px;
+    margin: 0px auto 50px auto;
+    border-bottom: 2px solid #bfbfbf;
+}
+.top .topbar_left{
+    float: left;
+    width: 250px;
+    height: 150px;
+    line-height: 150px;
+    font-size: 50px;
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    font-weight: 900;
+    letter-spacing: 3.52px;
+}
+.topbar_left>span{
+    color: #00aeef;
+}
+.top_right{
+    font-size: 0px;
+    float: right;
+    width: 500px;
+    height: 150px;
+}
+.top_right >input{
+    float: right;
+    vertical-align:middle;
+    width: 350px;
+    height: 40px;
+    padding: 15px;
+    margin-top: 55px;
+    border: 2px solid #00aeef;
+    font-size: 15px;
+}
+.top_right >button{
+    float: right;
+    vertical-align:middle;
+    margin-top: 55px;
+    width: 40px;
+    height: 40px;
+    background: url("../images/search.png") no-repeat #00aeef;
+    background-size: 100% 100%;
+    border: 2px solid #00aeef;
+}
+/**********************************top完***********************/
+/*包含所有订单的div*/
+.all_orders{
+    width: 1100px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+/*******************************订单每一项***************************/
+.order_item{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 530px;
+    height: 150px;
+    margin: 10px;
+    float: left;
+    border: 1px solid #dddddd;
+    padding: 15px;
+    transition: all 0.6s;/*阴影动画*/
+}
+.order_item:hover{
+    box-shadow: 3px 3px 3px 3px #888888;
+}
+.order_info{
+    float: left;
+    font-size: 15px;
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+}
+.order_item>a{
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    margin-right: 30px;
+    border: 1px solid #dddddd;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 7px;
+}
+
+.footer{
+    margin: 30px auto 0px auto;
+    width: 1100px   ;
+    height: 200px;
+    border-top: 2px solid #dddddd;
+}

@@ -1,0 +1,185 @@
+/******************top************************/
+.top{
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #dddddd;
+    background-color: #777;;
+}
+.top_center{
+    margin: 0 auto;
+    width: 1100px;
+    height: 100%;
+}
+.top_center .center_left{
+    width: 40%;
+    height: 100%;
+    float: left;
+    line-height: 80px;
+    font-size: 40px;
+    font-style: italic;
+    color: #dddddd;
+}
+.top_center .center_left>span{
+    font-size: 30px;
+    color: #fcc90f;
+}
+.top_center .center_right{
+    width: 60%;
+    height: 100%;
+    float: right;
+}
+
+.center_right>a{
+    display: inline-block;
+    float: right;
+    color: #FFFFFF;
+    font-size: 17px;
+    margin-left: 30px;
+    line-height: 80px;
+}
+.center_right>a:hover{
+    color: #fcc90f;
+}
+/************************订单div开始***************************/
+.order_body{
+    width: 100%;
+    overflow: hidden;
+    /*background-color: #eee;*/
+}
+.order_body .order_center{
+    margin: 50px auto;
+    width: 1100px;
+    overflow: hidden;
+    /*background-color: rgba(211,95,3,0.57);*/
+}
+/***********订单顶部************/
+.order_top{
+    width: 100%;
+    height: 100px;
+}
+.order_top .top_left{
+    float: left;
+    width: 950px;
+    height: 100%;
+}
+.top_left .order_id{
+    float: left;
+    width: 500px;
+    height: 100px;
+    line-height: 100px;
+    color: #7E7E7E;
+    font-size: 30px;
+}
+.top_left .order_id>span{
+    font-size: 25px;
+    color: #fcc90f;
+}
+.top_left .order_operate{
+    float: right;
+    width: 250px;
+    height: 100px;
+    line-height: 100px;
+}
+.order_operate>a{
+    margin-top: 40px;
+    float: right;
+    display: block;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #7E7E7E;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 10px;
+    font-size: 12px;
+}
+.order_top .top_right{
+    float: right;
+    width: 100px;
+    height: 100%;
+    background: url("../images/logo1.png") no-repeat right 0;
+    background-size: 100% 100%;
+}
+/**********订单具体goods*************/
+.goods_item{
+    width: 326px;
+    height: 400px;
+    margin: 20px;
+    float: left;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #c3c3c3;
+    /*background-color: rgba(252, 201, 15, 0.57);*/
+}
+.goodsImage{
+    display: block;
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+}
+.goodsImage>img{
+    width: 100%;
+    height: 100%;
+}
+.goods_item>div{
+    font-size: 15px;
+    color: #999999;
+    margin-top: 6px;
+    text-align: center;
+}
+.goods_item>div>span{
+    font-size: 14px;
+    color: #fcc90f;
+}
+
+
+
+/*************************支付框***********************/
+.pay_form{
+    width: 100%;
+    overflow: hidden;
+}
+
+.left_info{
+    float: left;
+    width: 420px;
+    height: 292px;
+    border-right: 1px solid #00aeef;
+    /*background-color: rgba(255, 138, 0, 0.42);*/
+}
+.left_info .pay_item{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+.left_info .pay_item:nth-child(5){
+    border-bottom: 1px solid #00aeef;
+}
+.pay_item .totalPrice{
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    font-size: 20px;
+    color: #00aeef;
+}
+.pay_item .totalPrice>span{
+    font-size: 25px;
+    color: #ef5f0b;
+}
+.pay_item>button{
+    float: right;
+    margin: 10px 10px 10px 20px;
+}
+/*模态框右边部分*/
+.right_info{
+    float: right;
+    width: 130px;
+    height: 292px;
+    overflow: auto;
+    /*background-color: #ff8a00;*/
+}
+.right_info>img{
+    border: 1px solid #999999;
+    width: 100%;
+    height: 120px;
+}

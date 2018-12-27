@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.libarary.mapper.ReaderMapper">
+
+	<select id = "loginCheck" parameterType = "java.lang.String" resultType = "java.lang.String">
+		select rdPwd from Reader where rdID = #{rdID}
+	</select>
+	
+	<select id = "queryReader" parameterType = "queryCondition" resultType = "reader">
+		select rdID,rdName,rdSex,rdType,rdDept,rdPhone,rdEmail,rdStatus,rdBorrowNum,rdDateReg
+		from Reader
+		<where>
+			<if test ="readerType!=null and readerType!=''">
+				 and rdType = #{readerType}
+			</if>
+			<if test ="dept!=null and dept!=''">
+				and rdDept = #{dept}
+			</if>
+			<if test ="name!=null and name!=''">
+			 	and rdName like'%${name}%'
+			</if>
+		</where>
+	</select>
+	
+	<select id = "noOfReader" parameterType = "string" resultType = "reader">
+		select rdID,rdName,rdPwd,rdSex,rdBorrowNum,rdType,rdDept,rdPhone,rdEmail,rdDateReg,rdPhoto,rdStatus,rdAdminRoles
+		from Reader where rdID = #{rdID}
+	</select>
+	
+	<update id ="insertReader" parameterType = "reader" >
+		insert into Reader(rdID ,rdName ,rdPwd,rdType ,rdDept,rdPhoto,rdEmail,rdSex,rdPhone) values (#{rdID},#{rdName},#{rdPwd},#{rdType},#{rdDept},#{rdPhoto},#{rdEmail},#{rdSex},#{rdPhone}) 
+	</update>
+	
+	<update id = "updateReader" parameterType =  "reader">
+		update Reader set rdName = #{rdName}, rdPwd = #{rdPwd},rdType=#{rdType},rdDept=#{rdDept},rdEmail=#{rdEmail},rdSex = #{rdSex},rdPhoto= #{rdPhoto},rdPhone = #{rdPhone}
+		where rdID = #{rdID}
+	</update>
+	
+	<update id = "updateByID" parameterType =  "reader">
+		update Reader set rdStatus = #{rdStatus} where rdStatus !='注销' and rdID = #{rdID}
+	</update>
+	
+	
+	<update id ="changeLevel" parameterType = "reader">
+		update Reader set rdName = #{rdName}, rdSex = #{rdSex},rdType = #{rdType},rdAdminRoles = #{rdAdminRoles} where rdID = #{rdID}
+	</update>
+	
+	<update id = "deleteById" statementType="CALLABLE">
+		 {call usp_deleteReader (
+		        #{rdID, mode=IN}
+		       )}
+
+	</update>
+	
+
+</mapper>

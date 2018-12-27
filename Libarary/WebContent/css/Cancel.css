@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+.dropdown{
+    display: inline-block;
+}
+
+
+.menu{
+	padding-left:0;
+	position:absolute;
+    display: none;
+    list-style: none;
+    border: 1px solid #eee;
+    
+}
+
+.menu li:hover{
+    background-color: #eee;
+}
+.dropdown:hover .menu{
+    display: block;
+}
+
+#top{
+	text-align:center;
+	height:30px;
+}
+
+a{
+	text-decoration:none;
+	color:black;
+}
+
+.rdID{
+}
+
+
+#last{
+	margin-top:50px;
+	text-align:center;
+}
+

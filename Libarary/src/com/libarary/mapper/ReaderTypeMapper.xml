@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "com.libarary.mapper.ReaderTypeMapper">
+
+	<select id = "noOfName" parameterType = "string" resultType = "int">
+		select rdType from ReaderType where rdTypeName = #{rdName}
+	</select>
+	
+	
+	<select id = "noOfCanContitueTimes" parameterType = "int" resultType ="int">
+		select canContinueTimes  from 
+		ReaderType,Reader where ReaderType.rdType = Reader.rdType and rdID = #{rdID}
+	</select>
+	
+	<select id = "rdIDofReaderType" parameterType = "int" resultType ="readerType">
+		select ReaderType.* from ReaderType,Reader where ReaderType.rdType=Reader.rdType and rdID =#{rdID}
+	</select>
+
+
+</mapper>

@@ -1,0 +1,291 @@
+/*设置html,body高度与浏览器高度一致*/
+html,body {
+    margin: 0;
+    width:100%;
+    height: 100%;
+    background: url("../images/background.jpg") no-repeat;
+    background-size: 100% 100%;
+    /*超出body范围部分隐藏*/
+    overflow: hidden;
+}
+.header{
+    font-size: 70px;
+    font-style: italic;
+    line-height: 150px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.header>span{
+    font-size: 50px;
+    color: rgba(252, 128, 3, 0.62);
+}
+
+.global{
+    width: 1100px;
+    height: 100%;
+    overflow: hidden;/*可使高度随子元素的高度自适应*/
+    margin: 0 auto;
+    position: relative;
+}
+
+/****************************左边商品展示***********************/
+.left_content{
+    float: left;
+    width: 700px;
+    height: 100%;
+    box-sizing: border-box;
+    /*border: 6px solid #7E7E7E;*/
+    overflow: auto;/*超出后有滚动条*/
+}
+/******************顶部*****************/
+.left_content .header{
+    width: 700px;
+    height: 150px;
+    border-bottom: 1px solid #1d1d1d;
+}
+/*******************中间类容****************/
+.left_content .content{
+    width: 700px;
+    overflow: hidden;
+    margin: 50px auto 0 auto;
+}
+.content .img_div{
+    width: 350px;
+    height: 350px;
+    float: left;
+    margin-right: 20px;
+    border: 1px solid #fcc90f;
+}
+.content .img_div>img{
+    width: 100%;
+    height: 100%;
+}
+.content .goods_info{
+    width: 310px;
+    float: left;
+    height: 350px;
+    /*background-color: #fffc07;*/
+}
+
+.goods_info>div{
+    width: 100%;
+    height: 87.5px;
+    line-height: 87.5px;
+    border-bottom: 1px solid #fcc90f;
+    font-size: 16px;
+    color: #1d1d1d;
+}
+/*商品价格*/
+.goods_info>div:nth-child(2)>span{
+    font-size: 20px;
+    color: #fc4f00;
+}
+.goods_info>div button{
+    width: 100px;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 188, 10, 0.93);
+}
+/*添加到购物车*/
+.goods_info>div:nth-child(3){
+    box-sizing: border-box;
+    padding-top: 30px;
+    border: none;
+}
+/*立即购买*/
+.goods_info>div:nth-child(4){
+    position: relative;
+    border: none;
+}
+.goods_info>div:nth-child(4) button{
+    position: absolute;
+    bottom: 0px;
+}
+/*商品简介*/
+.content .goods_brief{
+    margin-top: 10px;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-right: 22px;
+    padding-bottom: 10px;
+    width: 100%;
+    height: 130px;
+    float: left;
+    font-size: 15px;
+    border-top: 1px solid #1d1d1d;
+    border-bottom: 1px solid #1d1d1d;
+
+}
+/****************************content的底部***********************/
+.content_foot{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    background-color: #656565;
+}
+.content_foot .phone{
+    width: 300px;
+    height: 100%;
+    background: url("../images/phone.png") no-repeat left 0px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-size: 50px 50px;
+
+}
+
+/****************************右边客服***********************/
+/***再最外层加一个辅助div防止消息div滚动时，顶部和底部输入框都一起滚动***/
+.assist_div{
+    float: right;
+    width: 400px;
+    height: 100%;
+    box-sizing: border-box;
+    border: 5px solid #fcb60f;
+    position: relative;
+}
+.right_content{
+    width: 100%;
+    height: 90%;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    overflow: auto;/*带滚动条*/
+}
+
+.header-title{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0px;
+    top: 0;
+    line-height: 38px;
+    font-size: 20px;
+    text-align: center;
+    color: #fffefd;
+    background-color: rgba(252, 182, 5, 0.93);
+}
+/*再顶部设置一个div让第一条消息顶下来*/
+.top_zhanwei{
+    width: 100%;
+    height: 50px;
+}
+/*.bottom_zhanwei{*/
+    /*width: 100%;*/
+    /*height: 300px;*/
+/*}*/
+/*底部聊天输入框部分*/
+.chat-edit{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    background-color: #fcb911;
+}
+.chat-edit>input{
+    margin-top: 4px;
+    float: left;
+    width: 78%;
+    height: 45px;
+    font-size: 15px;
+    color: #1d1d1d;
+}
+.chat-edit>button{
+    margin-top: 3px;
+    margin-right: 2px;
+    float: right;
+    width: 20%;
+    height: 48px;
+}
+
+/*************聊天类容框*************/
+.bubbleItem{
+    width: 100%;
+    margin-bottom: 15px;
+    overflow: hidden;/*高度自适应*/
+    font-size: 0px;
+}
+/*客服图像*/
+.server-head{
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+.server-head>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 1px solid #656565;
+}
+/*******消息类容**********/
+.left_triangle {
+    display: inline-block;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid rgba(60,64,67,0.82);
+    margin-top: 20px;
+    float: left;
+}
+/*气泡*/
+.bubble{
+    margin-top: 7px;
+    font-size: 12px;
+    color: #bbdcff;
+    box-sizing: border-box;
+    padding: 7px;
+    display: inline-block;
+    max-width: 270px;
+    min-height: 31px;
+    overflow: hidden;/*高度自适应*/
+    background-color: rgba(9, 10, 14, 0.62);
+    border-radius: 5px;
+}
+.leftBubble{
+    float: left;
+}
+
+/***********右边用户消息部分***********/
+/*用户图像*/
+.user-head{
+    width: 40px;
+    height: 40px;
+    float: right;
+}
+.user-head>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 1px solid #656565;
+}
+
+/*******消息类容**********/
+.right_triangle {
+    display: inline-block;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid rgba(60,64,67,0.82);
+    margin-top: 20px;
+    float: right;
+}
+.rightBubble{
+    float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

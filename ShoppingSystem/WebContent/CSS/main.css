@@ -1,0 +1,264 @@
+/*顶部设计*/
+.top{
+    height: 60px;
+    width: 100%;
+    background: #FFFFFF;
+    /*position: fixed;!*固定导航栏*!*/
+    /*top: 0;!*紧贴浏览器顶部*!*/
+    /*z-index: 99;*/
+    border-bottom: 1px solid #a8a8a8;
+    margin-bottom: 10px;
+}
+.top_center {
+    width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+}
+.top_center_left{
+    width: 25%;
+    height: 100%;
+    float: left;
+    line-height: 60px;
+}
+.top_logo{
+	margin-top:10px;
+    height: 40px;
+}
+.top_logo img{
+    height: 100%;
+}
+/*top的搜索区域*/
+.top_center_search{
+    width: 50%;
+    height: 100%;
+    float: left;
+    margin: 0 auto;
+}
+.top_center_search>input{
+    vertical-align:middle;
+    margin: 15px auto;
+    border: 1px solid #fcc90f;
+    height: 30px;
+    width: 520px;
+    float: left;
+    padding: 3px 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.top_center_search>button{
+    margin: 15px auto;
+    vertical-align:middle;
+    border: 1px solid #000000;
+    float: left;
+    width: 30px;
+    height: 30px;
+    background: url("../images/search.png") no-repeat #fffefd;
+    background-size:100% 100%;
+    transition: all 0.2s;
+}
+.top_center_search>button:hover{
+    background: url("../images/search.png") no-repeat #fcb60f;
+    background-size:100% 100%;
+}
+.top_center_right{
+    width: 25%;
+    height: 60px;
+    float: left;
+}
+.top_center_right>ul{
+    width: 100%;
+    height: 60px;
+}
+.top_center_right>ul>li{
+    margin-left: 10px;
+    height: 60px;
+    float: right;
+    line-height: 60px;
+}
+/****************************top完******************************/
+
+/*****************************商品区*****************************/
+
+/********************商品标题**************/
+.shop_title{
+    width: 450px;
+    height: 50px;
+    margin: 10px auto;
+    /*background: #fcc90f;*/
+}
+.shop_title>div{
+    float: left;
+    width: 150px;
+    height: 50px
+}
+.shop_title>div:nth-child(1){
+    background: url("../images/flower.png") no-repeat;
+    background-size: 100% 100%;
+
+}
+.shop_title>div>h1{
+    text-align: center;
+    line-height: 50px;
+    font-size: 25px;
+    font-family: 幼圆;
+    color: #1d1d1d;
+}
+.shop_title>div:nth-child(3){
+    background: url("../images/flower1.png") no-repeat;
+    background-size: 100% 100%;
+
+}
+/********************商品标题玩**************/
+/********************商品某一类**************/
+.row_item{
+    margin: 10px auto;
+    width: 1100px;
+    overflow: hidden;/*可使高度随子元素的高度自适应*/
+    /*height: 350px;*/
+}
+
+.row_item .each_item{
+    float: left;
+    width: 255px;
+    height: 350px;
+    margin: 10px;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+    border-radius:8px;/*圆角div*/
+    border: 2px solid #e6e6e6;
+    box-sizing: border-box;
+    /*background: cornsilk;*/
+    transition: all 0.6s;/*阴影动画*/
+}
+
+
+/*商品图片*/
+.div_gdimg{
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+.div_gdimg>img{
+    width: 100%;
+    height: 100%;
+    transition: all 0.6s;
+}
+.each_item:hover{
+    box-shadow: 1px 3px 5px 5px #888888;
+}
+/*缩放图片*/
+.each_item:hover img{
+    transform: scale(1.1,1.1);
+}
+/*商品名和价格div*/
+.price_name{
+    width: 100%;
+    height: 10%;
+}
+.price_name .gdname{
+    line-height: 32px;
+    font-size: 16px;
+    float: left;
+}
+.price_name .gdprice{
+    line-height: 32px;
+    float: right;
+    color: #fcb60f;
+    font-size: 16px;
+}
+.each_item .btn_detail{
+    float: left;
+    width: 40%;
+    height: 10%;
+}
+
+.each_item>.div_btn{
+    width: 100%;
+    height: 10%;
+}
+.each_item .btn_detail{
+    float: left;
+    width: 40%;
+    height: 30px;
+    color: black;
+    border-radius:6px;
+    border: 1px solid #5bccf0;
+}
+
+.each_item .btn_addtocart{
+    float: right;
+    width: 40%;
+    height: 30px;
+    color: black;
+    border-radius:6px;
+    border: 1px solid #5bccf0;
+}
+/*立即购买和加入购物车两个按钮样式一起处理*/
+.btn_shop:hover{
+    background: #fcb911;
+    color: white;
+}
+/********************商品某一类完**************/
+
+/********************底部区域*****************/
+.footer{
+    width: 100%;
+    height: 330px;
+    background: #303030;
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+.footer .text{
+    margin: 0 auto;
+    width: 900px;
+    height: 40px;
+
+
+}
+.text>div{
+
+    width: 300px;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 50px;
+    padding-right: 10px;
+    /*text-align: center;*/
+    line-height: 40px;
+
+    font-size: 25px;
+    color: #efefef;
+}
+.text>div:nth-child(1){
+    float: left;
+    background: url("../images/1.png") no-repeat left 0;
+}
+.text>div:nth-child(2){
+    float: left;
+    text-align: center;
+    background: url("../images/2.png") no-repeat 20px 0;
+}
+.text>div:nth-child(3){
+    float: right;
+    background: url("../images/3.png") no-repeat 70px 0;
+    text-align: right;
+}
+
+.help{
+    margin-top: 60px;
+    text-align: center;
+    border-top: 1px solid #a8a8a8;
+}
+.help >p{
+    margin: 30px 0 16px 0;
+    padding-top: 12px;
+}
+
+.help>p>a{
+    font-size: 15px;
+}
+.help>p>span{
+    margin: 0 10px 0 10px;
+    font-size: 15px;
+}
+/********************底部区域完*****************/

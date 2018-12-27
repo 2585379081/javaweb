@@ -1,0 +1,158 @@
+/*设置html,body高度与浏览器高度一致*/
+html,body {
+    margin: 0;
+    width:100%;
+    height: 100%;
+    background: url("../images/background.jpg") no-repeat;
+    background-size: 100% 100%;
+    /*超出body范围部分隐藏*/
+    overflow: hidden;
+}
+.global{
+    width: 960px;
+    height: 100%;
+    overflow: hidden;/*可使高度随子元素的高度自适应*/
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/***再最外层加一个辅助div防止消息div滚动时，顶部和底部输入框都一起滚动***/
+.assist_div{
+    margin: 0 auto;
+    /*float: right;*/
+    width: 960px;
+    height: 100%;
+    box-sizing: border-box;
+    border: 5px solid #fcb60f;
+    position: relative;
+}
+.right_content{
+    width: 100%;
+    height: 90%;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    overflow: auto;/*带滚动条*/
+}
+
+.header-title{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0px;
+    top: 0;
+    line-height: 38px;
+    font-size: 20px;
+    text-align: center;
+    color: #fffefd;
+    background-color: rgba(252, 182, 5, 0.93);
+}
+/*再顶部设置一个div让第一条消息顶下来*/
+.top_zhanwei{
+    width: 100%;
+    height: 50px;
+}
+/*.bottom_zhanwei{*/
+/*width: 100%;*/
+/*height: 300px;*/
+/*}*/
+/*底部聊天输入框部分*/
+.chat-edit{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    background-color: #fcb911;
+}
+.chat-edit>input{
+    margin-top: 4px;
+    float: left;
+    width: 79%;
+    height: 45px;
+    font-size: 15px;
+    color: #1d1d1d;
+}
+.chat-edit>button{
+    margin-top: 3px;
+    margin-right: 2px;
+    float: right;
+    width: 20%;
+    height: 48px;
+}
+
+/*************聊天类容框*************/
+.bubbleItem{
+    width: 100%;
+    margin-bottom: 15px;
+    overflow: hidden;/*高度自适应*/
+    font-size: 0px;
+}
+/*客服图像*/
+.server-head{
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+.server-head>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 1px solid #656565;
+}
+/*******消息类容**********/
+.left_triangle {
+    display: inline-block;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid rgba(60,64,67,0.82);
+    margin-top: 20px;
+    float: left;
+}
+/*气泡*/
+.bubble{
+    word-wrap:break-word;
+    word-break:break-all;
+    margin-top: 7px;
+    font-size: 18px;
+    color: #bbdcff;
+    box-sizing: border-box;
+    padding: 15px;
+    display: inline-block;
+    max-width: 500px;
+    min-height: 31px;
+    overflow: hidden;/*高度自适应*/
+    background-color: rgba(9, 10, 14, 0.62);
+    border-radius: 5px;
+}
+.leftBubble{
+    float: left;
+}
+
+/***********右边用户消息部分***********/
+/*用户图像*/
+.user-head{
+    width: 40px;
+    height: 40px;
+    float: right;
+}
+.user-head>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 1px solid #656565;
+}
+
+/*******消息类容**********/
+.right_triangle {
+    display: inline-block;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid rgba(60,64,67,0.82);
+    margin-top: 20px;
+    float: right;
+}
+.rightBubble{
+    float: right;
+}

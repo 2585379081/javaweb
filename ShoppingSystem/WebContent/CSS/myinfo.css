@@ -1,0 +1,264 @@
+/*背景图片*/
+body{
+    background-image: url("../images/load_bg.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    background-attachment:fixed
+}
+
+/*顶部的bar*/
+.topbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #e6e6e6;
+}
+.topbar .topbar_center{
+    width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+}
+.topbar_center .topbar_left{
+    float: left;
+    width: 50px;
+    height: 30px;
+    background: url("../images/home.png") no-repeat left 0  ;
+    line-height: 30px;
+    /*color: white*/
+}
+.topbar_center .topbar_right{
+    float: right;
+    width: 70px;
+    height: 30px;
+    font-family: 'Crimson Text', serif;
+    text-align: right;
+    line-height: 30px;
+}
+/*******************************topbar完********************/
+
+/*******************************header********************/
+.header{
+    padding-top: 50px;
+    width: 100%;
+    height: 150px;
+}
+.header .h_center{
+    width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+    /*border: 1px solid #fcc90f;*/
+}
+.header .header_left{
+    float: left;
+    width: 550px;
+}
+.header .header_right{
+    float: right;
+    width: 100px;
+    height: 100px;
+    background: url("../images/logo1.png" ) no-repeat left 0;
+    background-size: 100% 100%;
+}
+/*******************************导航标题********************/
+.nav_title{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    border-bottom: 3px solid #00aeef;
+}
+.nav_center{
+    margin: 0 auto;
+    width: 1100px;
+    height: 40px;
+}
+.nav_center .title_content{
+    float: left;
+    line-height: 40px;
+    font-size: 17px;
+    margin-right: 40px;
+}
+/*************************************左基本信息,右会员信息***********************************/
+/*************公共属性*************/
+.user_info{
+    margin: 20px auto 0 auto;
+    width: 1100px;
+    height: 500px;
+    /*border: 2px solid #00aeef;*/
+    box-sizing: border-box;
+    padding: 25px;
+}
+.user_info form{
+    float: left;
+    width: 50%;
+    height: 70%;
+}
+/*基本信息的form*/
+.user_info >form:nth-child(1){
+    border-right: 2px solid #00aeef;
+}
+/*安全设置的form*/
+/*.user_info form:nth-child(3){*/
+    /*float: left;*/
+    /*width: 100%;*/
+    /*height: 30%;*/
+    /*border-top: 2px solid #00aeef;*/
+    /*background-color: rgba(252, 201, 15, 0.15);*/
+/*}*/
+
+.left_info>div>div,.right_info>div>div{
+    width: 60px;
+    height: 25px;
+    float: left;
+    line-height: 25px;
+}
+.left_info>div>input,.right_info>div>input{
+    width: 250px;
+    height: 25px;
+    padding-left: 10px;
+}
+/********左边基本信息*************/
+.left_info{
+    float: left;
+    width: 70%;
+    height: 100%;
+    /*background-color: rgba(252, 201, 15, 0.19);*/
+}
+/***基本信息的用户图像***/
+.user_img{
+    margin: 10px 25px 10px 25px;
+    float: right;
+    width: 100px;
+    height: 100px;
+}
+.user_img>img{
+    width: 100%;
+    height: 100%;
+}
+.user_img>input{
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+}
+.user_img>input[type=file]{
+    margin: 10px 0px 0px  15px;
+    color: transparent;
+}
+.user_img>input[type=button]:hover{
+    background-color: #00aeef;
+    color: #FFFFFF;
+}
+/*其他基本信息*/
+.left_info>div{
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+}
+
+.left_info .info_account .account{
+    box-sizing: border-box;
+    color: #ffbc0a;
+    padding-left: 10px;
+}
+.submit_user_info{
+    margin-top: 10px;
+    width: 150px;
+    height: 30px;
+}
+.submit_user_info:hover{
+    background-color: #00aeef;
+    color: #FFFFFF;
+}
+
+/************右边的会员信息*************/
+.right_info{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 25px;
+    /*background-color: rgba(27,85,170,0.15);*/
+}
+.right_info>div:nth-child(1){
+    padding-top: 10px;
+    width: 100%;
+    height: 40px;
+}
+.vip_status{
+    height: 120px;
+    margin-left: 120px;
+}
+.joinVip{
+    padding-top: 10px;
+    width: 100%;
+    height: 40px;
+}
+
+/*单选框*/
+.right_info label{
+    /*vertical-align: middle;*/
+    font-size: 20px;
+    margin-right: 40px;
+}
+
+.right_info>span{
+    color: #f92200;
+    font-size: 20px;
+}
+/*点击开通会员*/
+.btn_vip{
+    margin-top: 27px;
+    display: block;
+    width: 100px;
+    height: 30px;
+}
+.btn_vip:hover{
+    background-color: #00aeef;
+    color: #FFFFFF;
+}
+.safe_setting{
+    border-top: 2px solid #00aeef;
+    float: left;
+    width: 100%;
+}
+.safe_title{
+    padding-top: 10px;
+    width: 100%;
+    height: 40px;
+}
+.safe_div{
+    width: 50%;
+    height: 100px;
+    float: left;
+}
+.login_pwd_safe>form{
+    width: 100%;
+    height: 100%;
+    border-right: 2px solid #00aeef;
+}
+.pay_pwd_safe>form{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 25px;
+}
+.safe_div>form>div{
+    margin-top: 15px;
+}
+
+.safe_div>form>div>div{
+    float: left;
+    width:80px;
+    margin-right: 20px;
+    line-height: 30px;
+}
+.safe_div>form>div>input{
+    vertical-align: middle;
+    width: 200px;
+    height: 25px;
+}
+.safe_div>form>div>input:nth-child(3){
+    margin-left: 40px;
+    vertical-align: middle;
+    width: 100px;
+    height: 25px;
+}

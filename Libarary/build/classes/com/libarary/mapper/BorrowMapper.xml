@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace ="com.libarary.mapper.BorrowMapper">
+
+
+
+<resultMap id="readerMap" type="readerInfo">
+	<id column="rdID" property="rdID" />
+	<result column="rd_type"  property="rdType" />
+	<result column="rdName"  property="rdName" />
+	<result column="rdDept"  property="rdDept" />
+	<result column="canLendNum"  property="canLendNum" />
+	<result column="canLendDay"  property="canLendDay" />
+</resultMap>
+
+
+<resultMap id="bookMap" type="bookInfo">
+	<id column="bk_ID" property="bkID" />
+	<result column="bkName"  property="bkName" />
+	<result column="bkAuthor"  property="bkAuthor" />
+	<result column="idContitueTimes"  property="idContitueTimes" />
+	<result column="idDateOut"  property="idDateOut" />
+	<result column="idDateRetPlan"  property="idDateRetPlan" />
+	<result column="idOverDay"  property="idOverDay" />
+	<result column="idOverMoney"  property="idOverMoney" />
+</resultMap>
+
+
+
+	<update id = "updateBorrow" parameterType = "returnVo"> 
+		update Borrow set idOverDay= #{idOverDay},idOverMoney= #{idOverMoney} where bkID = #{bkID} and rdID = #{rdID}
+	</update>
+	
+	<select id ="queryReaderVo" parameterType ="int" resultMap ="readerMap">
+		select rdID,rdName,Reader.rdType  rd_type,rdDept,canLendNum,canLendDay from Reader ,ReaderType
+		  where Reader.rdType = ReaderType .rdType and rdId = #{rdID}
+	</select>
+	
+	<select id ="queryLendedNum" parameterType ="int"  resultType = "int">
+		select count(*) from Borrow where rdID = #{rdID} and isReturn = 0
+	</select>
+	
+	<select id = "queryBorrow" parameterType = "lendvo" resultType= "borrow">
+			select * from Borrow where bkID = #{bkID} and rdID = #{rdID} and isReturn = 0
+	</select>
+	
+	<select id = "queryBookVo" parameterType = "int" resultMap= "bookMap">
+			select Borrow.bkID bk_ID,bkName,bkAuthor,idContitueTimes,idDateOut,idDateRetPlan,idOverDay,idOverMoney from Borrow,Book,Reader
+		where Borrow.bkID = Book.bkID and Reader.rdID = Borrow.rdID and isReturn = 0 and Reader.rdID = #{rdID}
+	</select>
+	
+	<select id="returnBook" statementType="CALLABLE" >
+		    {call usp_returnBook(
+		        #{bkID, mode=IN}, 
+		        #{rdID, mode=IN},
+		        #{idOverDay, mode=IN}, 
+		        #{idOverMoney, mode=IN},
+		        #{operatorRet, mode=IN}
+		       )}
+	</select>
+	
+		<select id="lendBook" statementType="CALLABLE" >
+		    {call usp_lendBook(
+		        #{bkID, mode=IN}, 
+		        #{rdID, mode=IN},
+		        #{idDateOut, mode=IN},
+		        #{idDateRetPlan, mode=IN}, 
+		        #{operatorLend, mode=IN}
+		       )}
+	</select>
+	
+
+	
+		<select id="contitueLend" statementType="CALLABLE" >
+		    {call usp_contitueLend (
+		        #{bkID, mode=IN}, 
+		        #{rdID, mode=IN},
+		        #{idDateRetPlan, mode=IN},
+		        #{operatorLend, mode=IN}
+		       )}
+	</select>
+	
+
+
+
+
+</mapper>

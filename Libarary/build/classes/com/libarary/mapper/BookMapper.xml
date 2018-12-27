@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.libarary.mapper.BookMapper">
+
+	
+	<update id = "addBook" parameterType ="book">
+		insert into Book (bkCode,bkName,bkAuthor,bkPress,bkDatePress,bkISBN,bkCatalog,bkLanguage,bkPages,bkPrice,bkDateIn,bkBrief,bkClassName,bkNum,bkCover)
+		 values (#{bkCode},#{bkName},#{bkAuthor},#{bkPress},#{bkDatePress},#{bkISBN},#{bkCatalog},#{bkLanguage},#{bkPages},#{bkPrice},
+		 	#{bkDateIn},#{bkBrief},#{bkClassName},#{bkNum},#{bkCover})
+	</update>
+	
+	
+	<update id = "updateBook" parameterType ="book">
+		update Book set bkCode=#{bkCode},bkName=#{bkName},bkAuthor=#{bkAuthor},bkPress=#{bkPress},bkDatePress=#{bkDatePress},bkISBN=#{bkISBN},bkCatalog=#{bkCatalog},bkLanguage=#{bkLanguage},
+		bkPages=#{bkPages},bkPrice=#{bkPrice},bkDateIn=#{bkDateIn},bkBrief=#{bkBrief},bkClassName=#{bkClassName},bkNum=#{bkNum},bkCover=#{bkCover} where bkID = #{bkID}
+	</update>
+	
+	<select id = "simpleQuery" parameterType ="simpleQuery" resultType ="book">
+			<if test="queryType=='书名'">
+				select * from Book where bkName like '%${queryName}%'
+			</if>
+			<if test ="queryType=='作者'">
+				select * from Book where bkAuthor like '%${queryName}%'
+			</if>
+	</select>
+
+	<select id ="comQuery" parameterType ="comQuery" resultType = "book">
+			select * from Book 
+			<where>
+				<if test = "bkName!=null and bkName !=''">
+					and bkName like '%${bkName}%'
+				</if>
+				<if test = "bkAuthor!=null and bkAuthor !=''">
+					and bkAuthor like '%${bkAuthor}%'
+				</if>
+				<if test = "bkBrief!=null and bkBrief !=''">
+					and bkBrief like '%${bkBrief}%'
+				</if>
+				<if test = "bkPress!=null and bkPress !=''">
+					and bkPress like '%${bkPress}%'
+				</if>
+				<if test = "bkCatalog!=null and bkCatalog !=''">
+					and bkCatalog like '%${bkCatalog}%'
+				</if>
+				<if test = "bkPressYear!=null and bkPressYear !=''">
+					and bkDatePress like '%${bkPressYear}%'
+				</if>
+			</where>
+	</select>
+	
+	
+	<select id = "bookQuery" parameterType ="bookVo" resultType ="book">
+			select * from Book 
+			<where>
+				<if test="bkID!=null and bkID !=''" >
+					and bkID = #{bkID}
+				</if>
+				<if test ="bkName !=null and bkName!=''">
+					and bkName like '%${bkName}%'
+				</if>
+			</where>
+	</select>
+	
+	<update id = "deleteById" statementType="CALLABLE">
+	 {call usp_deleteBook (
+	        #{bkID, mode=IN}
+	       )}
+
+	</update>
+	
+	<select id = "selectById" parameterType = "int" resultType = "book">
+		select * from Book where bkID = #{bkID}
+	</select>
+
+</mapper>

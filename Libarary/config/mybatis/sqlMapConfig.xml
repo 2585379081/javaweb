@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+	
+
+<configuration>	
+	
+	<typeAliases>
+		<!-- <typeAlias type ="com.mybatis.po" alias ="user"></typeAlias> -->
+		<package name = "com.libarary.model"></package>
+		<package name = "com.libarary.po"></package>
+	</typeAliases>
+	
+	<!-- <typeHandles>这个是类型处理器，java对象和jdbc类型的转换</typeHandles> -->
+	<!-- <objectFactory>对象工厂</objectFactory> -->
+	<!-- <plugin>插件</plugin> -->
+	
+	
+	<!-- 将mapper映射文件加到配置文件 -->
+	<mappers>
+	
+	</mappers>
+
+</configuration>
